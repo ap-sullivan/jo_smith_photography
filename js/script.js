@@ -1,5 +1,8 @@
 var swiper = new Swiper(".mySwiper", {
-    
+  navigation: {
+    nextEl: '.swiper-button-next-unique',
+    prevEl: '.swiper-button-prev-unique'
+  },
   slidesPerView: 3,
   spaceBetween: 50,
   pagination: {
@@ -8,7 +11,7 @@ var swiper = new Swiper(".mySwiper", {
   },
   loop: true,
   autoplay: {
-      delay: 2500,
+      delay: 3500,
       disableOnInteraction: false,
     },
 
@@ -51,17 +54,17 @@ gsap.to(".parallax-hero", {
 
 // makes the about section blur on scroll but reveal at 800px into the parallax-hero element
 
-gsap.set(".section-about", { filter: "blur(10px)" });
-gsap.to(".section-about", {
-  filter: "blur(0px)",
-  scrollTrigger: {
-    trigger: ".parallax-hero",
-    start: "top top", 
-      end: "+=800",
-    scrub: true,
-    // markers: true
-  }
-});
+// gsap.set(".section-about", { filter: "blur(10px)" });
+// gsap.to(".section-about", {
+//   filter: "blur(0px)",
+//   scrollTrigger: {
+//     trigger: ".parallax-hero",
+//     start: "top top", 
+//       end: "+=800",
+//     scrub: true,
+//     // markers: true
+//   }
+// });
 
 
 gsap.set(".section-about", { filter: "blur(0px)" });
@@ -74,6 +77,65 @@ gsap.to(".section-about", {
     scrub: true,
     // markers: true
   }
+});
+
+// gsap.set(".section-service-cards", { filter: "blur(10px)" });
+// gsap.to(".section-service-cards", {
+//   filter: "blur(0px)",
+//   scrollTrigger: {
+//     trigger: ".section-about",
+//     start: "top top", 
+//       end: "+=800",
+//     scrub: true,
+//     // markers: true
+//   }
+// });
+
+
+
+//Animnation for images sliding in on avout me section
+
+const boxes = gsap.utils.toArray('.showcase-image');
+boxes.forEach(image => {
+  const anim = gsap.from(image, { rotation: -360, x: 900, duration: 1.5, paused: true });
+  
+  ScrollTrigger.create({
+    trigger: image,
+    start: "center 80%",
+    onEnter: () => anim.play()
+  });
+  
+  ScrollTrigger.create({
+    trigger: image,
+    start: "top bottom",
+    onLeaveBack: () => anim.pause(0)
+  });
+});
+
+
+
+
+
+
+// gsap.from(".service-card-container", { x: 1000, duration: 2,
+//   scrollTrigger: {
+//   trigger: ".service-card", //  the trigger element
+// }
+// });
+
+
+
+gsap.from(".service-card", {x: 1500, rotate: 360, duration: 2, ease: "power2.inOut",
+scrollTrigger:{
+  trigger:".service-card", start:"top 90%",
+toggleActions:"restart none none reset"} //these reset the animation - each one represents onEnter, onLeave, onEnterBack, onLeaveBack
+
+});
+
+gsap.to('.title-wrap', {width:'100%', duration: 1,
+ scrollTrigger:
+ {trigger:'.title-wrap', start:'top 80%', 
+ toggleActions:'restart none none reset'}
 });
 
 
