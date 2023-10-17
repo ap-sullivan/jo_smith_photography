@@ -1,7 +1,10 @@
+// script for the my work gallery on home page
+
 var swiper = new Swiper(".mySwiper", {
+  effect: "coverflow",
   navigation: {
-    nextEl: '.swiper-button-next-unique',
-    prevEl: '.swiper-button-prev-unique'
+    nextEl: '.swiper-button-next-gallery',
+    prevEl: '.swiper-button-prev-gallery'
   },
   slidesPerView: 3,
   spaceBetween: 50,
@@ -13,6 +16,13 @@ var swiper = new Swiper(".mySwiper", {
   autoplay: {
       delay: 3500,
       disableOnInteraction: false,
+    },
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
     },
 
     breakpoints: {
@@ -35,6 +45,23 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
+// script for the testimonial carousel
+
+var swiper2 = new Swiper(".testimonial-swiper", {
+  navigation: {
+    nextEl: '.swiper-button-next-testimonial',
+    prevEl: '.swiper-button-prev-testimonial'
+  },
+  pagination: {
+    effect: "fade",
+    speed: 1500,
+    loop: true,
+    autoplay: {
+      delay: 6500,
+      disableOnInteraction: false,
+    },
+  }
+});
 
 
 // Makes the parallax element blur on scroll once the about section comes into the viewport
@@ -79,19 +106,6 @@ gsap.to(".section-about", {
   }
 });
 
-// gsap.set(".section-service-cards", { filter: "blur(10px)" });
-// gsap.to(".section-service-cards", {
-//   filter: "blur(0px)",
-//   scrollTrigger: {
-//     trigger: ".section-about",
-//     start: "top top", 
-//       end: "+=800",
-//     scrub: true,
-//     // markers: true
-//   }
-// });
-
-
 
 //Animnation for images sliding in on avout me section
 
@@ -117,6 +131,9 @@ boxes.forEach(image => {
 
 
 
+
+
+
 // gsap.from(".service-card-container", { x: 1000, duration: 2,
 //   scrollTrigger: {
 //   trigger: ".service-card", //  the trigger element
@@ -132,11 +149,6 @@ toggleActions:"restart none none reset"} //these reset the animation - each one 
 
 });
 
-gsap.to('.title-wrap', {width:'100%', duration: 1,
- scrollTrigger:
- {trigger:'.title-wrap', start:'top 80%', 
- toggleActions:'restart none none reset'}
-});
 
 
 
@@ -156,6 +168,9 @@ gsap.to('.title-wrap', {width:'100%', duration: 1,
 //     self.direction === -1 ? showAnim.play() : showAnim.reverse()
 //   }
 // });
+
+
+// Hamburger menu
 
 const btnNav = document.querySelector('.btn-mobile-nav');
 const headerEl = document.querySelector('.header');

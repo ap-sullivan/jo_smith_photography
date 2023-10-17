@@ -29,8 +29,8 @@
   }
 
 html {
-    /* global font-size reset to make fo make 1rem = 10px */
-    font-size: 62.5%;
+    font-size: 62.5%; /* global font-size reset to make fo make 1rem = 10px */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -40,6 +40,7 @@ body {
     line-height: 1;
     letter-spacing: 0.5px;
     font-weight: 400;
+    min-height: 100vh;
     
 }
 
@@ -387,6 +388,8 @@ body {
   
 .showcase-image {
   position: absolute;  
+  border-radius: 1rem;
+
 }
 
 .showcase-image-one {
@@ -465,8 +468,12 @@ z-index: 2;
     width: 30%;
     perspective: 150rem;
     -moz-perspective: 150rem;
-    margin-right: 6rem;
     text-align: center;
+  }
+  
+  .service-card:not(:last-child) {
+  margin-right: 6rem;
+
 }
 
 .service-card-side {
@@ -634,27 +641,37 @@ z-index: 2;
  .swiper {
     
   width: 95%;
-  height: 65%;
+  height: 68%;
 }
 
-.swiper-slide {
-  height: 400px;
+.swiper-image {
+  height: 40rem;
   text-align: center;
   font-size: 18px;
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.swiper-slide img {
+.swiper-image img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.swiper-button {
+.swiper-image--8 {
+  background-image: linear-gradient( rgb(251, 246, 233, 0.1), rgba(255, 119, 48, 0.3)), url("../img/swiper-7.jpg");
+}
+
+.swiper-image--9 {
+  background-image: linear-gradient( rgb(251, 246, 233, 0.1), rgba(255, 119, 48, 0.1)), url("../img/swiper-8.jpeg");
+}
+
+.swiper-button-gallery {
   position: absolute;
   color: var(--color-black);
   height: 5.8rem;
@@ -662,26 +679,30 @@ z-index: 2;
   cursor: pointer;
 }
 
-.swiper-pagination-bullet-active {
+.swiper-button-gallery:hover {
+  color: var(--color-primary-light);
+}
+
+.swiper-button-right-gallery {
+ top:48%;
+ right: 8%;
+}
+
+.swiper-button-left-gallery {
+  top:48%;
+  left: 8%;
+ }
+
+ .swiper-pagination-bullet-active {
   background-color: var(--color-primary-dark) !important;
 }
 
-.swiper-button-right {
- top:48%;
- right: 6%;
-}
-
-.swiper-button-left {
-  top:48%;
-  left: 6%;
- }
-
 .caption {
   position: absolute;
-  left: 0;
-  top: 0;
-
-  color: #F76800;
+  left: 10%;
+  top: 10%;
+  background-color: var(--color-primary-dark);
+  color: #000;  
 }
 
    /*************************/
@@ -695,6 +716,112 @@ z-index: 2;
   padding: 8rem 15rem 10rem 15rem;
 }
 
+.testimonial-title {
+  margin-bottom: 10rem;
+}
+
+.testimonial-image img {
+  
+  display: block;
+  width: 55%;
+  height: 98%;
+  object-fit: cover;
+}
+
+
+.testimonial-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  background:  var(--color-primary-light);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -10;
+  /* clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%); */
+}
+
+.testimonial-text {
+  font-size: 2.2rem;
+  margin: 0rem 4rem 0rem 4rem;
+  line-height: 1.2;
+}
+
+.testimonial-user {
+  margin-top: 2rem;
+}
+
+/* css for quotation marks */
+
+.testimonial::before,.testimonial::after {
+  position:absolute;
+  content:"“";
+  font-size:20rem;
+  color:var(--color-primary-dark-transparent);
+  font-family:sans-serif;
+  line-height:1;
+  z-index:1;
+} 
+
+.testimonial::before {
+  top:2rem;
+  left:3rem;
+}
+
+.testimonial::after {
+  top:1rem;
+  left:52rem;
+  transform: rotate(180deg);
+}
+
+
+
+.testimonial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top:0%;
+  margin: 5rem 0 8rem 0;
+  height: 28rem;
+  width: 60rem;
+  background-color: var(--color-white);
+  border-radius: 1rem;
+}
+
+
+
+.swiper-button-testimonial {
+ 
+  color: var(--color-primary-dark);
+  height: 5.8rem;
+  width: 5.8rem;
+  cursor: pointer;
+}
+
+.button-container { 
+  height: 30%;
+  position: relative;
+}
+
+.swiper-button-right-testimonial {
+  position: absolute;
+  left: 65%;
+  bottom: 104%;
+  z-index: 100;
+}
+
+.swiper-button-left-testimonial {
+  position: absolute;
+  left: 58%;
+  bottom: 104%;
+  z-index: 100;
+}
+
+
 
   /*********************/
   /* FOOTER  */
@@ -703,7 +830,9 @@ z-index: 2;
 
 .footer {
   height: 20vh;
+  width: 100%;
   background-color: aqua;
+  /* position: fixed; */
 }
 
  /*********************/
@@ -734,3 +863,45 @@ z-index: 2;
 /* border-image: linear-gradient(#f6b73c, #4d9f0c) 30;
     border-width: 4px;
     border-style: solid; */
+
+
+ /*******************************/
+  /* BRUSH STROKE HEADINGS */
+  /******************************/
+    
+    .highlight-container, .highlight {
+      position: relative;
+    }
+    
+    .highlight-container {
+      display: inline-block;
+    }
+    .highlight-container:before, .highlight-container:after {
+      content: " ";
+      display: block;
+      height: 90%;
+      width: 100%;
+      margin-left: -3px;
+      margin-right: -3px;
+      position: absolute;
+    }
+    .highlight-container:before {
+      background: var(--color-primary-dark-transparent-2);
+      transform: rotate(2deg);
+      top: -1px;
+      left: -1px;
+    }
+    .highlight-container:after {
+      background: var(--color-primary-dark-transparent-2);
+      top: 3px;
+      right: -2px;
+    }
+
+    .highlight-container .highlight {
+      color: #333;
+      z-index: 4;
+    }
+    
+    h2 {
+      font-size: 6rem;
+    }
