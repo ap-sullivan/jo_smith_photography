@@ -90,13 +90,67 @@ body {
   }
 
   .heading-secondary {
-    font-size: 4.2rem;
+    font-size: 4.8rem;
     padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+    margin-bottom: 7rem;
   }
+
+
+   /*******************************/
+  /* BRUSH STROKE HEADINGS */
+  /******************************/
+    
+    .highlight-container, .highlight {
+      position: relative;
+    }
+    
+    .highlight-container {
+      display: inline-block;
+    }
+    .highlight-container:before, .highlight-container:after {
+      content: " ";
+      display: block;
+      height: 98%;
+      width: 108%;
+      margin-left: -3px;
+      margin-right: -3px;
+      position: absolute;
+    }
+    
+    .highlight-container-light:before {
+      background: var(--color-primary-white-transparent);
+    }
+
+    .highlight-container-light:after {
+      background: var(--color-primary-white-transparent);
+    }
+
+    .highlight-container-dark:before {
+      background: var(--color-primary-dark-transparent);
+    }
+
+    .highlight-container-dark:after {
+      background: var(--color-primary-dark-transparent-2  );
+    }
+
+    .highlight-container:before {
+      transform: rotate(2deg);
+      top: -1px;
+      left: -1px;
+    }
+    .highlight-container:after {
+      top: 3px;
+      right: -2px;
+      transform: rotate(-1deg);
+    }
+
+    .highlight-container .highlight {
+      color: #333;
+      z-index: 4;
+    }
 
 /* this is used for the headings that use clip path to give them a box shadow */
   .title-wrap {
@@ -111,10 +165,8 @@ body {
   }
 
  /*********************/
-  /* HEADER STYLES */
+  /* HEADER STYLING */
   /********************/
-
- 
 
 .header {
     background-color: var(--color-primary-light-transparent);
@@ -164,125 +216,128 @@ body {
 /****** MOBILE HAMBURGER MENU *******/
 
 .btn-mobile-nav{
-    display: none;
-    border: none;
-    background: none;
-    cursor: pointer;
-    }
-    
-    .icon-mobile-nav{
-    height: 5.8rem;
-    width: 5.8rem;
-    color: var(--color-primary-dark);
-    }
-    
-    .icon-mobile-nav[name="close-outline"]{
-        display: none; 
-      }
-
-      @media(max-width: 60em){
-
-        html {
-          
-            font-size: 60%;
-        }
-        
-        
-        /**** hamburger nav ******/
-
-        .btn-mobile-nav{
-            position: relative;
-            display: block;
-            z-index: 20000;
-            margin-left: auto;
-        }
-        
-        .main-nav{
-          
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--color-primary-dark-transparent);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 38%;
-            height: 50vh;
-            transform: translateX(100%);
-            transition: all 0.5s ease-in;
-            animation: moveInRight 1s ease-out;
-       
-            /* make it inaccessible to keyboard and mouse */
-            pointer-events: none;
-            
-            /* hide */
-            opacity: 0;
-            display: none;
-    }
-
-    /* CSS that gets added when open-nav is added as a class using javascript */
-    
-    .nav-open .main-nav {
-        opacity: 1;
-        pointer-events: auto;
-        /* visibility: visible; */
-        display: block;
-        transform: translateX(0);
-        z-index: 10000;
-        animation: moveInRight .7s ease-out;
-    }
-
-    .main-nav-list:first-child {
-    padding-top: 10rem;
-    }
-
-    .main-nav-list {
-       /* padding: 10rem; */
-        flex-direction: column;
-        gap: 4.8rem;
-        
-    }
-    
-    .main-nav-link:visited,
-    .main-nav-link:link {
-        font-size: 3rem;
-        /* color: var(--color-white); */
-    }
-
-    .icon-mobile-nav {
-        margin: 2rem 5rem;
-        color: var(--color-black);
-    }
-    
-    .nav-open .icon-mobile-nav[name="close-outline"]{
-        display: block; 
-        
-    }
+  display: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  }
   
-    .nav-open .icon-mobile-nav[name="menu-outline"]{
-        display: none; 
+  .icon-mobile-nav{
+  height: 5.8rem;
+  width: 5.8rem;
+  color: var(--color-primary-dark);
+  }
+  
+  .icon-mobile-nav[name="close-outline"]{
+      display: none; 
     }
 
-    .header {
-        height: 10rem;
-    }
+    @media(max-width: 60em){
 
-    .logo-list-item {
-        display: none;
-        visibility: hidden;
-    }
+      html {
+        
+          font-size: 60%;
+      }
+      
+      
+      /**** hamburger nav ******/
 
-    .logo-mobile {
-        position: absolute;
-        left: 5%;
-        visibility: visible;
-        display: block;
-    }
-    
-    
+      .btn-mobile-nav{
+          position: relative;
+          display: block;
+          z-index: 20000;
+          margin-left: auto;
+      }
+      
+      .main-nav{
+        
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--color-primary-dark-transparent);
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 38%;
+          height: 50vh;
+          transform: translateX(100%);
+          transition: all 0.5s ease-in;
+          animation: moveInRight 1s ease-out;
+     
+          /* make it inaccessible to keyboard and mouse */
+          pointer-events: none;
+          
+          /* hide */
+          opacity: 0;
+          display: none;
+  }
+
+  /* CSS that gets added when open-nav is added as a class using javascript */
+  
+  .nav-open .main-nav {
+      opacity: 1;
+      pointer-events: auto;
+      /* visibility: visible; */
+      display: block;
+      transform: translateX(0);
+      z-index: 10000;
+      animation: moveInRight .7s ease-out;
+  }
+
+  .main-nav-list:first-child {
+  padding-top: 10rem;
+  }
+
+  .main-nav-list {
+     /* padding: 10rem; */
+      flex-direction: column;
+      gap: 4.8rem;
+      
+  }
+  
+  .main-nav-link:visited,
+  .main-nav-link:link {
+      font-size: 3rem;
+      /* color: var(--color-white); */
+  }
+
+  .icon-mobile-nav {
+      margin: 2rem 5rem;
+      color: var(--color-black);
+  }
+  
+  .nav-open .icon-mobile-nav[name="close-outline"]{
+      display: block; 
+      
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"]{
+      display: none; 
+  }
+
+  .header {
+      height: 10rem;
+  }
+
+  .logo-list-item {
+      display: none;
+      visibility: hidden;
+  }
+
+  .logo-mobile {
+      position: absolute;
+      left: 5%;
+      visibility: visible;
+      display: block;
+  }
+  
+  
 }
+
+
+
 
 
 
@@ -330,7 +385,7 @@ body {
   /********************/
 
 .section-about {
-  padding: 10rem 15rem 10rem 15rem;
+  padding: 8rem 15rem 10rem 15rem;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
   height: 100vh;
@@ -339,7 +394,6 @@ body {
 }
 
 .about-container {
-  margin-top: 10rem;
   display: flex; 
 }
 
@@ -447,11 +501,7 @@ z-index: 2;
 
 }
 
-.services-title {
-  width: 45%;
-  background-color: var(--color-primary-medium);
-  margin-bottom: 8rem;
-}
+
 
 .service-card-container {
   display: flex;
@@ -716,9 +766,6 @@ z-index: 2;
   padding: 8rem 15rem 10rem 15rem;
 }
 
-.testimonial-title {
-  margin-bottom: 10rem;
-}
 
 .testimonial-image img {
   
@@ -776,8 +823,6 @@ z-index: 2;
   transform: rotate(180deg);
 }
 
-
-
 .testimonial {
   display: flex;
   justify-content: center;
@@ -792,10 +837,7 @@ z-index: 2;
   border-radius: 1rem;
 }
 
-
-
 .swiper-button-testimonial {
- 
   color: var(--color-primary-dark);
   height: 5.8rem;
   width: 5.8rem;
@@ -821,6 +863,91 @@ z-index: 2;
   z-index: 100;
 }
 
+/*********************/
+/* FAQ SECTION  */
+/********************/
+
+.section-faq {
+  height: 100vh;
+  padding: 8rem 15rem 10rem 15rem;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  background-color: var(--color-primary-medium);
+}
+
+.faq-container {
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq {
+  width: 75%;
+  background-color: var(--color-primary-light);
+  border-radius: 10px;
+  margin: 2rem 0;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.faq.active {
+  background-color: var(--color-white);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.faq-answer {
+  display: none;
+  margin: 30px 0 0;
+}
+
+
+.faq.active .faq-answer {
+  display: block;
+}
+
+.faq-toggle {
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 0;
+  position: absolute;
+  top: 24px;
+  right: 40px;
+  height: 3rem;
+  width: 3rem;
+}
+
+.faq-toggle:focus {
+  outline: 0;
+}
+
+.faq-toggle .faq-icon[name="close-circle-outline"]{
+  display: none;
+}
+
+.faq.active .faq-toggle .faq-icon[name="close-circle-outline"] {
+
+  display: block;
+}
+
+
+.faq.active .faq-toggle .faq-icon[name="chevron-down-circle-outline"] {
+  display: none;
+}
+
+.faq-icon {
+  width: 100%;
+}
 
 
   /*********************/
@@ -865,43 +992,5 @@ z-index: 2;
     border-style: solid; */
 
 
- /*******************************/
-  /* BRUSH STROKE HEADINGS */
-  /******************************/
-    
-    .highlight-container, .highlight {
-      position: relative;
-    }
-    
-    .highlight-container {
-      display: inline-block;
-    }
-    .highlight-container:before, .highlight-container:after {
-      content: " ";
-      display: block;
-      height: 90%;
-      width: 100%;
-      margin-left: -3px;
-      margin-right: -3px;
-      position: absolute;
-    }
-    .highlight-container:before {
-      background: var(--color-primary-dark-transparent-2);
-      transform: rotate(2deg);
-      top: -1px;
-      left: -1px;
-    }
-    .highlight-container:after {
-      background: var(--color-primary-dark-transparent-2);
-      top: 3px;
-      right: -2px;
-    }
 
-    .highlight-container .highlight {
-      color: #333;
-      z-index: 4;
-    }
     
-    h2 {
-      font-size: 6rem;
-    }

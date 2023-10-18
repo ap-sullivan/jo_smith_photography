@@ -129,19 +129,6 @@ boxes.forEach(image => {
 
 
 
-
-
-
-
-
-// gsap.from(".service-card-container", { x: 1000, duration: 2,
-//   scrollTrigger: {
-//   trigger: ".service-card", //  the trigger element
-// }
-// });
-
-
-
 gsap.from(".service-card", {x: 1500, rotate: 360, duration: 2, ease: "power2.inOut",
 scrollTrigger:{
   trigger:".service-card", start:"top 90%",
@@ -178,4 +165,15 @@ const headerEl = document.querySelector('.header');
 btnNav.addEventListener('click', function() {
   headerEl.classList.toggle('nav-open')
   
+})
+
+
+// Faq section toggle
+
+const toggles = document.querySelectorAll('.faq-toggle')
+
+toggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+        toggle.parentNode.classList.toggle('active')
+    })
 })
