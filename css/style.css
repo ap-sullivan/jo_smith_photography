@@ -13,12 +13,13 @@
     --color-primary-dark: #F76800;
     --color-primary-dark-transparent: rgba(247, 104, 0, 0.2);
     --color-primary-dark-transparent-2: rgba(247, 104, 0, 0.55);
+    --color-primary-dark-transparent-3: rgba(247, 104, 0, 0.65);
     --color-grey: #888888;
     --color-black: #190a00;
     --color-black-transparent: rgba(25, 10, 0, 0.25);
 
-    --light-shadow: 0 5px 15px rgba(25, 10, 0, .1)
-    --dark-shadow:
+    --light-shadow: 0 5px 15px rgba(25, 10, 0, .1);
+    /* --dark-shadow: */
 }
 
 
@@ -171,9 +172,6 @@ body {
 .header {
     background-color: var(--color-primary-light-transparent);
     height: auto;
-
-    /* position: fixed;
-    width: 100%; */
 }
 
 .logo {
@@ -336,11 +334,6 @@ body {
   
 }
 
-
-
-
-
-
 /***************************************/
   /* HERO IMAGE AND PARALLAX STYLES */
 /***************************************/
@@ -397,7 +390,6 @@ body {
   display: flex; 
 }
 
-
 .about-decription {
   font-size: 2rem;
   display: flex;
@@ -416,7 +408,6 @@ body {
   clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
 }
 
-
 .about-decription > p {
   margin-bottom: 3rem;
 }
@@ -427,7 +418,6 @@ body {
   margin-top: 2rem;;
   display: flex;
   align-items: center;
-  
 }
 
 .about-photo {
@@ -588,6 +578,10 @@ z-index: 2;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   background-color:  var(--color-primary-dark-transparent-2);
+}
+
+.card-title-span-prints {
+  background-color:  var(--color-primary-dark-transparent-3);
 }
 
 .service-card-features {
@@ -835,6 +829,7 @@ z-index: 2;
   width: 60rem;
   background-color: var(--color-white);
   border-radius: 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .swiper-button-testimonial {
@@ -868,7 +863,7 @@ z-index: 2;
 /********************/
 
 .section-faq {
-  height: 100vh;
+  height: 115vh;
   padding: 8rem 15rem 10rem 15rem;
   clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
   background-color: var(--color-primary-medium);
@@ -949,6 +944,101 @@ z-index: 2;
   width: 100%;
 }
 
+ /*********************/
+  /* CONTACT SECTION  */
+  /********************/
+
+  .section-contact {
+    height: 100vh;
+    background-color: var(--color-primary-light);
+    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+    padding: 8rem 15rem 10rem 15rem;
+  }
+
+ /*********************/
+  /* GALLERY PAGE  */
+  /********************/
+
+  .parallax-gallery-hero {
+  position: relative;
+  background-image: linear-gradient(to right bottom, rgb(251, 246, 233, 0.1), rgba(255, 119, 48, 0.1)), url("../img/gallery-parallax-hero.jpeg");
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero-text-box-gallery {
+  top: 70%;
+ 
+}
+
+.section-gallery {
+  background-color: var(--color-primary-light);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  padding: 8rem 15rem 10rem 15rem;
+  
+}
+
+.light-gallery {
+  /* margin: 0 10rem; */
+  width: 100%;
+  /* padding: 8rem 15rem 10rem 15rem; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6rem;
+}
+
+.gallery-item {
+  width: auto;
+  height: 23rem;
+  padding: 2rem;
+}
+
+  /*********************/
+  /* CONTACT SECTION  */
+  /********************/
+
+ .contact-section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+ }
+
+ .contact-intro {
+  font-size: 2rem;
+  text-align: center;
+  padding: 0 5rem;
+  margin-bottom: 4rem;
+  
+}
+
+ .contact-container {
+  display: flex;
+  justify-content: center;
+ }
+
+.contact-form {
+  margin-left: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+ .book-call-button {
+
+ }
+
+ .contact-form input {
+  margin-bottom: 2rem;
+  height: 3rem;
+  width: 30rem;
+ }
+
+ .contact-message {
+  height: 20rem;
+ }
 
   /*********************/
   /* FOOTER  */
@@ -960,6 +1050,11 @@ z-index: 2;
   width: 100%;
   background-color: aqua;
   /* position: fixed; */
+}
+
+ion-icon {
+font-size: 48px;
+color: var(--color-black);
 }
 
  /*********************/

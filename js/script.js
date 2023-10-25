@@ -1,3 +1,4 @@
+
 // script for the my work gallery on home page
 
 var swiper = new Swiper(".mySwiper", {
@@ -64,13 +65,15 @@ var swiper2 = new Swiper(".testimonial-swiper", {
 });
 
 
+
+
 // Makes the parallax element blur on scroll once the about section comes into the viewport
 
 gsap.set(".parallax-hero", { filter: "blur(0px)" });
 gsap.to(".parallax-hero", {
   filter: "blur(8px)",
   scrollTrigger: {
-    trigger: ".section-about",
+    trigger: ".parallax-blur-start",
     start: "top center",
     end: "top top",
     scrub: true,
@@ -78,21 +81,7 @@ gsap.to(".parallax-hero", {
   }
 });
 
-
-// makes the about section blur on scroll but reveal at 800px into the parallax-hero element
-
-// gsap.set(".section-about", { filter: "blur(10px)" });
-// gsap.to(".section-about", {
-//   filter: "blur(0px)",
-//   scrollTrigger: {
-//     trigger: ".parallax-hero",
-//     start: "top top", 
-//       end: "+=800",
-//     scrub: true,
-//     // markers: true
-//   }
-// });
-
+// Makes the about section blur on scroll once the services section comes into the viewport
 
 gsap.set(".section-about", { filter: "blur(0px)" });
 gsap.to(".section-about", {
@@ -103,6 +92,50 @@ gsap.to(".section-about", {
       end: "top top",
     scrub: true,
     // markers: true
+  }
+});
+
+gsap.set(".section-service-cards", { filter: "blur(0px)" });
+gsap.to(".section-service-cards", {
+  filter: "blur(10px)",
+  scrollTrigger: {
+    trigger: ".parallax-mid-section",
+    start: "top center", 
+      end: "top top",
+    scrub: true,
+  }
+});
+
+gsap.set(".section-my-work", { filter: "blur(0px)" });
+gsap.to(".section-my-work", {
+  filter: "blur(10px)",
+  scrollTrigger: {
+    trigger: ".section-testimonials",
+    start: "top center", 
+      end: "top top",
+    scrub: true,
+  }
+});
+
+gsap.set(".section-testimonials", { filter: "blur(0px)" });
+gsap.to(".section-testimonials", {
+  filter: "blur(10px)",
+  scrollTrigger: {
+    trigger: ".section-faq",
+    start: "top center", 
+      end: "top top",
+    scrub: true,
+  }
+});
+
+gsap.set(".section-faq", { filter: "blur(0px)" });
+gsap.to(".section-faq", {
+  filter: "blur(10px)",
+  scrollTrigger: {
+    trigger: ".section-contact",
+    start: "top center", 
+      end: "top top",
+    scrub: true,
   }
 });
 

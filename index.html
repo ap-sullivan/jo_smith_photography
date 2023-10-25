@@ -17,6 +17,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<!-- MAPBOX JS LIBRARY -->
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
 
 </head>
 <body>
@@ -27,10 +31,10 @@
             <ul class="main-nav-list">
                 
                 <li><a href="#services" class="main-nav-link link">Services</a></li>
-                <li><a href="#" class="main-nav-link link">Gallery</a></li>
+                <li><a href="gallery.html" class="main-nav-link link">Gallery</a></li>
                 <li class="logo-list-item"><a class="logo-anchor" href="index.html"><img class="logo" src="img/logo/LOGO_LIGHT_trimmed-_removedbg.png" alt="Jo Smith photography logo"></a></li>
                 <li><a href="#testimonials" class="main-nav-link link">Testimonials</a></li>
-                <li><a href="#" class="main-nav-link link">Contact</a></li>
+                <li><a href="#contact" class="main-nav-link link">Contact</a></li>
                 
             </ul>
         </nav>
@@ -51,7 +55,7 @@
     </div>
 
     <main>
-        <section class="section-about">
+        <section class="section-about parallax-blur-start">
 
             <h2 class="heading-secondary">
                 <span class="highlight-container highlight-container-light">
@@ -163,7 +167,7 @@
                         &nbsp;
                     </div>
 
-                    <h3 class="card-title heading-tertiary"><span class="card-title-span">Framed Prints</span></h3>
+                    <h3 class="card-title heading-tertiary"><span class="card-title-span card-title-span-prints">Framed Prints</span></h3>
                     <ul class="service-card-features">
                         <li>Lorem ipsum dolor sit amet.</li>
                         <li>Lorem ipsum dolor sit.</li>
@@ -290,7 +294,7 @@
             <h2 class="heading-secondary"><span class="highlight-container highlight-container-light"><span class="highlight">Frequently Asked Questions</span></span></h2>
 
             <div class="faq-container">
-                <div class="faq active">
+                <div class="faq">
                     <h3 class="faq-question">Do you do Christenings?
                     </h3>
 
@@ -305,7 +309,7 @@
                 </div>
 
 
-                <div class="faq active">
+                <div class="faq">
                     <h3 class="faq-question">Lorem ipsum dolor sit.
                     </h3>
 
@@ -327,8 +331,19 @@
                         Yes. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore, eius tempore possimus facere ipsam eum esse aperiam officia a.
                     </p>
 
-               
+                    <button class="faq-toggle">
+                        <ion-icon size="large" name="chevron-down-circle-outline" class="faq-icon" ></ion-icon>
+                        <ion-icon size="large" name="close-circle-outline" class="faq-icon"></ion-icon>
+                    </button>
+                </div>
 
+                <div class="faq">
+                    <h3 class="faq-question">Lorem ipsum dolor sit amet consectetur.
+                    </h3>
+
+                    <p class="faq-answer">
+                        Yes. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora Lorem, ipsum dolor.
+                    </p>
 
                     <button class="faq-toggle">
                         <ion-icon size="large" name="chevron-down-circle-outline" class="faq-icon" ></ion-icon>
@@ -340,7 +355,56 @@
 
         </section>
 
+        <section class="section-contact" id="contact">
 
+            <h2 class="heading-secondary">
+                <span class="highlight-container highlight-container-dark">
+                    <span class="highlight">Get In Touch
+                    </span>
+                </span>
+            </h2>
+            
+            <div class="contact-section-container">
+            <p class="contact-intro"> 
+                I would love to hear from you. Drop into my shop in Battlefields, drop me a message and i'll get back to you within 24 hours or book a 15-minute call directly into my calendar.
+            </p>
+
+            <div class="contact-container">
+            <!-- Mapbox code  -->
+            <div id='map' style='width: 450px; height: 350px;'></div>
+            <script>
+              mapboxgl.accessToken = 'pk.eyJ1IjoiMjAzMzQ0MTAiLCJhIjoiY2xvNWhiY2hkMGFmYTJsbzIzY3lxaTNlcSJ9.R0qBSqf6-nN9NrAyqWOb3Q';
+              var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/outdoors-v12',
+                center: [-4.263135, 55.82637], // starting position [lng, lat]
+                zoom: 14 
+              });
+
+              map.addControl(new mapboxgl.NavigationControl());
+            </script>
+
+
+
+           
+
+        <div class="contact-form">
+         
+            <input class="contact-name" type="text" placeholder="Name">
+            <input class="contact-email" type="email" placeholder="Email">
+            <input class="contact-number" type="number" placeholder="Contact Number">
+            <input class="contact-message" type="text" placeholder="Message">
+
+            <div class="contact-buttons">
+                <button class="btn btn--dark book-call-button"> <a class="link" href="#">Submit</a></button>
+                <button class="btn btn--dark book-call-button"> <a class="link" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/20334410'});return false;">Book a Call</a></button>
+                </div>
+        </div>
+       
+        </div>
+        </div>
+            
+        </section>
      
        
 
@@ -348,6 +412,15 @@
 
     <footer class="footer">
 
+        <div class="footer-social-icons">
+        <ion-icon class="social-icons" name="logo-facebook"></ion-icon>
+        <ion-icon class="social-icons" name="logo-instagram"></ion-icon>
+        <ion-icon class="social-icons" name="logo-linkedin"></ion-icon>
+        <ion-icon class="social-icons" name="logo-twitter"></ion-icon>
+    </div>
+
+    <h5>&copy;Jo Smith Photography</h5>
+    
     </footer>
     
 <!-- CALENDLY LIBRARY LINK -->
