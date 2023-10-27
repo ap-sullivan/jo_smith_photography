@@ -366,40 +366,38 @@
             
             <div class="contact-section-container">
             <p class="contact-intro"> 
-                I would love to hear from you. Drop into my shop in Battlefields, drop me a message and i'll get back to you within 24 hours or book a 15-minute call directly into my calendar.
+                I would love to hear from you. Visit my shop in Battlefields, drop me a message and i'll get back to you within 24 hours or <a class="link calendly-link" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/20334410'});return false;">click here to book a 15-minute call</a> directly into my calendar.
             </p>
 
             <div class="contact-container">
             <!-- Mapbox code  -->
             <div id='map' style='width: 450px; height: 350px;'></div>
             <script>
-              mapboxgl.accessToken = 'pk.eyJ1IjoiMjAzMzQ0MTAiLCJhIjoiY2xvNWhiY2hkMGFmYTJsbzIzY3lxaTNlcSJ9.R0qBSqf6-nN9NrAyqWOb3Q';
+              mapboxgl.accessToken = 'pk.eyJ1IjoiMjAzMzQ0MTAiLCJhIjoiY2xvNHJwamZlMDVmdjJpbGFkNzhvMms5byJ9.55thX8DA8H-1bVIl5Ik5Og';
               var map = new mapboxgl.Map({
                 container: 'map',
-                style: 'mapbox://styles/mapbox/outdoors-v12',
+                style: 'mapbox://styles/20334410/clo64kb0900pj01pkfamscpq7',
+                // style: 'mapbox://styles/mapbox/outdoors-v12',
                 center: [-4.263135, 55.82637], // starting position [lng, lat]
-                zoom: 14 
+                zoom: 13 
               });
 
               map.addControl(new mapboxgl.NavigationControl());
             </script>
 
-
-
+        
+        <form >
+            <fieldset class="contact-form">
+            <input aria-label="enter your name" class="contact-name" type="text" placeholder="Name">
+            <input aria-label="enter your emaol" class="contact-email" type="email" placeholder="Email">
+            <input aria-label="enter your contact number" class="contact-number" type="number" placeholder="Contact Number">
+            <textarea aria-label="enter your message" class="contact-message" type="text" placeholder="Message"></textarea>
+            <div class="contact-button">
+            <button aria-label="send message" class="btn btn--dark contact-submit">Submit</button>
+            </div>
+        </fieldset>
            
-
-        <div class="contact-form">
-         
-            <input class="contact-name" type="text" placeholder="Name">
-            <input class="contact-email" type="email" placeholder="Email">
-            <input class="contact-number" type="number" placeholder="Contact Number">
-            <input class="contact-message" type="text" placeholder="Message">
-
-            <div class="contact-buttons">
-                <button class="btn btn--dark book-call-button"> <a class="link" href="#">Submit</a></button>
-                <button class="btn btn--dark book-call-button"> <a class="link" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/20334410'});return false;">Book a Call</a></button>
-                </div>
-        </div>
+            </form>
        
         </div>
         </div>
