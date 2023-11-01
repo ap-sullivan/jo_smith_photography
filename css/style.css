@@ -54,6 +54,12 @@ body {
     color: inherit;
   }
 
+  .btn:active {
+      box-shadow: none;
+      transform: translateY(5px);
+    
+  }
+
   .btn--dark {
     background-color: var(--color-primary-dark);
     color: var(--color-white);
@@ -83,14 +89,15 @@ body {
   .btn--dark:hover, .btn--dark:active {
     background-color: var(--color-primary-medium);
     color: var(--color-white);
-    transform: scale(1.05);
   }
-  
+
+
+
   .btn--light:hover, .btn--light:active {
     background-color: var(--color-white);
     color: var(--color-primary-medium);
-    transform: scale(1.05);
   }
+
 
   .heading-secondary {
     font-size: 4.8rem;
@@ -394,6 +401,7 @@ body {
 
 .about-decription {
   font-size: 2rem;
+  line-height: 1.1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -496,6 +504,7 @@ z-index: 2;
 
 
 .service-card-container {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -507,7 +516,7 @@ z-index: 2;
     background-color:  var(--color-primary-light);
     font-size: 1.6rem;
     height: 52rem;
-    width: 30%;
+    width: 32%;
     perspective: 150rem;
     -moz-perspective: 150rem;
     text-align: center;
@@ -570,7 +579,7 @@ z-index: 2;
   top: 12rem;
   right: 1rem;
   width: 60%;
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   line-height: 1.6  ;
   
 }
@@ -601,13 +610,8 @@ z-index: 2;
 }
 
 .service-card-features li:not(:last-child) {
-  border-bottom:  1.5px solid var(--color-grey);
-}
-
-
-
-.service-card-side--front {
-
+  border-bottom: 1.5px solid var(--color-grey);
+  width: 80%;
 }
 
 
@@ -628,6 +632,14 @@ z-index: 2;
   }
 .service-card:hover .service-card-side--back {
   transform: rotateY(0deg)
+  }
+
+
+  .services-btn {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    display: none;
+    visibility: hidden;
   }
 
 /* BACK OF CARD */
@@ -809,13 +821,13 @@ z-index: 2;
 } 
 
 .testimonial::before {
-  top:2rem;
+  top:1rem;
   left:3rem;
 }
 
 .testimonial::after {
-  top:1rem;
-  left:52rem;
+  top:2rem;
+  left:50rem;
   transform: rotate(180deg);
 }
 
@@ -828,7 +840,7 @@ z-index: 2;
   top:0%;
   margin: 5rem 0 8rem 0;
   height: 28rem;
-  width: 60rem;
+  width: 50%;
   background-color: var(--color-white);
   border-radius: 1rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -957,48 +969,7 @@ z-index: 2;
     padding: 8rem 15rem 10rem 15rem;
   }
 
- /*********************/
-  /* GALLERY PAGE  */
-  /********************/
-
-  .parallax-gallery-hero {
-  position: relative;
-  background-image: linear-gradient(to right bottom, rgb(251, 246, 233, 0.1), rgba(255, 119, 48, 0.1)), url("../img/gallery-parallax-hero.jpeg");
-  min-height: 100vh;
-  background-attachment: fixed;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.hero-text-box-gallery {
-  top: 70%;
  
-}
-
-.section-gallery {
-  background-color: var(--color-primary-light);
-  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-  padding: 8rem 15rem 10rem 15rem;
-  
-}
-
-.light-gallery {
-  /* margin: 0 10rem; */
-  width: 100%;
-  /* padding: 8rem 15rem 10rem 15rem; */
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 6rem;
-}
-
-.gallery-item {
-  width: auto;
-  height: 23rem;
-  padding: 2rem;
-}
-
   /*********************/
   /* CONTACT SECTION  */
   /********************/
@@ -1088,10 +1059,41 @@ z-index: 2;
 
 
 .footer {
-  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 18vh;
   width: 100%;
-  background-color: aqua;
-  /* position: fixed; */
+  background-color: var(--color-primary-medium);
+  
+}
+
+.footer-nav-list {
+  list-style: none;
+  font-size: 2rem;
+}
+
+
+.social-icons:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.social-icons a:hover {
+  cursor: pointer;
+}
+
+.footer-address {
+  margin: 0 12rem;
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+.footer-info {
+  font-size: 2rem;
+}
+
+.footer-copyright {
+  margin-bottom: 1rem;
 }
 
 ion-icon {
@@ -1099,10 +1101,140 @@ font-size: 48px;
 color: var(--color-black);
 }
 
+ion-icon:hover {
+  cursor: pointer;
+  color: var(--color-primary-light);
+}
+
  /*********************/
   /* MEDIA QUERIES */
   /********************/
 
+  @media(max-width: 85em) {
+
+    html {
+      font-size: 60%;}
+
+      .card-title {
+        font-size: 2.1rem;
+      }
+
+      .service-card:not(:last-child) {
+        margin-right: 3rem;
+      }
+
+      .testimonial {
+        width: 40rem;
+      }
+      .testimonial-text {
+        font-size: 1.6rem;
+      }
+
+    
+  }
+
+  
+  @media(max-width: 71em) {
+
+    .about-decription {
+      font-size: 1.8rem;
+    }
+
+    .showcase-image-three {
+      top: 49%;
+    }
+
+    .showcase-image-six {
+      right: 9%;
+      top: 50%;
+    }
+
+    .about-sign-off-box {
+      font-size: 2rem;
+    }
+
+    .about-photo {
+      width: 16rem
+    }
+
+    .section-service-cards {
+      height: 100%;
+    }
+    .service-card-container {
+      flex-direction: column;
+    }
+  
+    .service-card {
+      width: 60%;
+    }
+
+    .service-card:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 5rem; 
+    }
+
+    .card-title {
+      font-size: 2.8rem;
+    }
+
+    .service-card:hover .service-card-side--front {
+      transform: rotateY(0deg);
+        
+      }
+    .service-card:hover .service-card-side--back {
+      transform: rotateY(180deg)
+      }
+
+      .services-btn {
+        display: block;
+        visibility: visible;
+        margin: 2rem;
+      }
+
+      
+  }
+
+  /*********************/
+  /* GALLERY PAGE  */
+  /********************/
+
+  .parallax-gallery-hero {
+    position: relative;
+    background-image: linear-gradient(to right bottom, rgb(251, 246, 233, 0.1), rgba(255, 119, 48, 0.1)), url("../img/gallery-parallax-hero.jpeg");
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .hero-text-box-gallery {
+    top: 70%;
+   
+  }
+  
+  .section-gallery {
+    background-color: var(--color-primary-light);
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+    padding: 8rem 15rem 10rem 15rem;
+    
+  }
+  
+  .light-gallery {
+ 
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6rem;
+  }
+  
+  .gallery-item {
+    width: auto;
+    height: 23rem;
+    padding: 2rem;
+  }
+  
 
  /*********************/
   /* ANIMATIONS */
