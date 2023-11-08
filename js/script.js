@@ -67,7 +67,7 @@ var swiper2 = new Swiper(".testimonial-swiper", {
 
 
 
-// Makes the parallax element blur on scroll once the about section comes into the viewport
+// // Makes the parallax element blur on scroll once the about section comes into the viewport
 
 // gsap.set(".parallax-hero", { filter: "blur(0px)" });
 // gsap.to(".parallax-hero", {
@@ -140,7 +140,7 @@ var swiper2 = new Swiper(".testimonial-swiper", {
 // });
 
 
-// //Animnation for images sliding in on avout me section
+// // //Animnation for images sliding in on avout me section
 
 // const boxes = gsap.utils.toArray('.showcase-image');
 // boxes.forEach(image => {
@@ -160,33 +160,23 @@ var swiper2 = new Swiper(".testimonial-swiper", {
 // });
 
 
+// gsap.utils.toArray(".section-about").forEach(section => {
+//   gsap.from(section.querySelectorAll("h2, span, p"), {
+//     scrollTrigger: {section,
+//     toggleActions:"restart restart none reset"},
+//     autoAlpha: 0,
+//     y: 25,
+//     duration: 0.5,
+//     stagger: 0.6
+//   });
+// });
 
 
 // gsap.from(".service-card", {x: 1500, rotate: 360, duration: 2, ease: "power2.inOut",
 // scrollTrigger:{
 //   trigger:".service-card", start:"top 90%",
-// toggleActions:"restart none none reset"} //these reset the animation - each one represents onEnter, onLeave, onEnterBack, onLeaveBack
+//   toggleActions:"restart none none reset"} //these reset the animation - each one represents onEnter, onLeave, onEnterBack, onLeaveBack
 
-// });
-
-
-
-
-
-// fixed header - cant get working properly yet
-
-// const showAnim = gsap.from('.fixed-header', { 
-//   yPercent: -100,
-//   paused: true,
-//   duration: 0.2
-// }).progress(1);
-
-// ScrollTrigger.create({
-//   start: "top top",
-//   end: 99999,
-//   onUpdate: (self) => {
-//     self.direction === -1 ? showAnim.play() : showAnim.reverse()
-//   }
 // });
 
 
