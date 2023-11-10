@@ -35,7 +35,7 @@ var swiper = new Swiper(".mySwiper", {
           slidesPerView: 1,
           spaceBetween: 20,
         },
-      1080: {
+      1000: {
           slidesPerView: 2,
           spaceBetween: 30,
         },
@@ -67,117 +67,117 @@ var swiper2 = new Swiper(".testimonial-swiper", {
 
 
 
-// // Makes the parallax element blur on scroll once the about section comes into the viewport
+// Makes the parallax element blur on scroll once the about section comes into the viewport
 
-// gsap.set(".parallax-hero", { filter: "blur(0px)" });
-// gsap.to(".parallax-hero", {
-//   filter: "blur(8px)",
-//   scrollTrigger: {
-//     trigger: ".parallax-blur-start",
-//     start: "top center",
-//     end: "top top",
-//     scrub: true,
-//     // markers: true
-//   }
-// });
+gsap.set(".parallax-hero", { filter: "blur(0px)" });
+gsap.to(".parallax-hero", {
+  filter: "blur(8px)",
+  scrollTrigger: {
+    trigger: ".parallax-blur-start",
+    start: "top center",
+    end: "top top",
+    scrub: true,
+    // markers: true
+  }
+});
 
-// // Makes the about section blur on scroll once the services section comes into the viewport
+// Makes the about section blur on scroll once the services section comes into the viewport
 
-// gsap.set(".section-about", { filter: "blur(0px)" });
-// gsap.to(".section-about", {
-//   filter: "blur(10px)",
-//   scrollTrigger: {
-//     trigger: ".section-service-cards",
-//     start: "top center", 
-//       end: "top top",
-//     scrub: true,
-//     // markers: true
-//   }
-// });
+gsap.set(".section-about", { filter: "blur(0px)" });
+gsap.to(".section-about", {
+  filter: "blur(10px)",
+  scrollTrigger: {
+    trigger: ".section-service-cards",
+    start: "top center", 
+      end: "top top",
+    scrub: true,
+    // markers: true
+  }
+});
 
-// gsap.set(".section-service-cards", { filter: "blur(0px)" });
-// gsap.to(".section-service-cards", {
-//   filter: "blur(10px)",
-//   scrollTrigger: {
-//     trigger: ".parallax-mid-section",
-//     start: "top center", 
-//       end: "top top",
-//     scrub: true,
-//   }
-// });
+gsap.set(".section-service-cards", { filter: "blur(0px)" });
+gsap.to(".section-service-cards", {
+  filter: "blur(10px)",
+  scrollTrigger: {
+    trigger: ".parallax-mid-section",
+    start: "top center", 
+      end: "top top",
+    scrub: true,
+  }
+});
 
-// gsap.set(".section-my-work", { filter: "blur(0px)" });
-// gsap.to(".section-my-work", {
-//   filter: "blur(10px)",
-//   scrollTrigger: {
-//     trigger: ".section-testimonials",
-//     start: "top center", 
-//       end: "top top",
-//     scrub: true,
-//   }
-// });
+gsap.set(".section-my-work", { filter: "blur(0px)" });
+gsap.to(".section-my-work", {
+  filter: "blur(10px)",
+  scrollTrigger: {
+    trigger: ".section-testimonials",
+    start: "top center", 
+      end: "top top",
+    scrub: true,
+  }
+});
 
-// gsap.set(".section-testimonials", { filter: "blur(0px)" });
-// gsap.to(".section-testimonials", {
-//   filter: "blur(10px)",
-//   scrollTrigger: {
-//     trigger: ".section-faq",
-//     start: "top center", 
-//       end: "top top",
-//     scrub: true,
-//   }
-// });
+gsap.set(".section-testimonials", { filter: "blur(0px)" });
+gsap.to(".section-testimonials", {
+  filter: "blur(10px)",
+  scrollTrigger: {
+    trigger: ".section-faq",
+    start: "top center", 
+      end: "top top",
+    scrub: true,
+  }
+});
 
-// gsap.set(".section-faq", { filter: "blur(0px)" });
-// gsap.to(".section-faq", {
-//   filter: "blur(10px)",
-//   scrollTrigger: {
-//     trigger: ".section-contact",
-//     start: "top center", 
-//       end: "top top",
-//     scrub: true,
-//   }
-// });
+gsap.set(".section-faq", { filter: "blur(0px)" });
+gsap.to(".section-faq", {
+  filter: "blur(10px)",
+  scrollTrigger: {
+    trigger: ".section-contact",
+    start: "top center", 
+      end: "top top",
+    scrub: true,
+  }
+});
 
 
-// // //Animnation for images sliding in on avout me section
+// //Animnation for images sliding in on avout me section
 
-// const boxes = gsap.utils.toArray('.showcase-image');
-// boxes.forEach(image => {
-//   const anim = gsap.from(image, { rotation: -360, x: 1200, duration: 1.5, paused: true });
+const boxes = gsap.utils.toArray('.showcase-image');
+boxes.forEach(image => {
+  const anim = gsap.from(image, { rotation: -360, x: 1200, duration: 1.5, paused: true });
   
-//   ScrollTrigger.create({
-//     trigger: image,
-//     start: "center 80%",
-//     onEnter: () => anim.play()
-//   });
+  ScrollTrigger.create({
+    trigger: image,
+    start: "center 80%",
+    onEnter: () => anim.play()
+  });
   
-//   ScrollTrigger.create({
-//     trigger: image,
-//     start: "top bottom",
-//     onLeaveBack: () => anim.pause(0)
-//   });
-// });
+  ScrollTrigger.create({
+    trigger: image,
+    start: "top bottom",
+    onLeaveBack: () => anim.pause(0)
+  });
+});
 
 
-// gsap.utils.toArray(".section-about").forEach(section => {
-//   gsap.from(section.querySelectorAll("h2, span, p"), {
-//     scrollTrigger: {section,
-//     toggleActions:"restart restart none reset"},
-//     autoAlpha: 0,
-//     y: 25,
-//     duration: 0.5,
-//     stagger: 0.6
-//   });
-// });
+gsap.utils.toArray(".section-about").forEach(section => {
+  gsap.from(section.querySelectorAll("h2, span, p"), {
+    scrollTrigger: {section,
+    toggleActions:"restart restart none reset"},
+    autoAlpha: 0,
+    y: 25,
+    duration: 0.5,
+    stagger: 0.6
+  });
+});
 
 
-// gsap.from(".service-card", {x: 1500, rotate: 360, duration: 2, ease: "power2.inOut",
-// scrollTrigger:{
-//   trigger:".service-card", start:"top 90%",
-//   toggleActions:"restart none none reset"} //these reset the animation - each one represents onEnter, onLeave, onEnterBack, onLeaveBack
+gsap.from(".service-card", {x: 1500, rotate: 360, duration: 2, ease: "power2.inOut",
+scrollTrigger:{
+  trigger:".service-card", start:"top 90%",
+  toggleActions:"restart none none reset"} //these reset the animation - each one represents onEnter, onLeave, onEnterBack, onLeaveBack
 
-// });
+});
 
 
 // Hamburger menu

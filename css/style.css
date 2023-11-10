@@ -390,7 +390,7 @@ body {
   padding: 8rem 15rem 10rem 15rem;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-  height: 100vh;
+  height: 105vh;
   background-color: var(--color-primary-medium);
   z-index: -10;
 }
@@ -401,7 +401,7 @@ body {
 }
 
 .about-description {
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1.1;
   display: flex;
   flex-direction: column;
@@ -425,7 +425,7 @@ body {
 
 .about-sign-off-box {
   font-weight: bold;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   margin-top: 3rem;;
   display: flex;
   align-items: center;
@@ -497,7 +497,7 @@ z-index: 2;
 .section-service-cards {
   padding: 10rem 15rem 10rem 15rem;
   background-color:  var(--color-primary-light);
-  height: 104vh;
+  height: 115vh;
   clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
 
 }
@@ -781,10 +781,9 @@ z-index: 2;
 
 
 .testimonial-image img {
-  
   display: block;
   width: 55%;
-  height: 98%;
+  height: 94%;
   object-fit: cover;
 }
 
@@ -806,7 +805,7 @@ z-index: 2;
 .testimonial-text {
   padding-top: 3rem;
   font-size: 2.2rem;
-  margin: 0rem 4rem 0rem 4rem;
+  padding: 0rem 4rem 0rem 4rem;
   line-height: 1.2;
 }
 
@@ -828,13 +827,13 @@ z-index: 2;
 } 
 
 .testimonial-text::before {
-  top:1rem;
-  left:3rem;
+  top:8%;
+  left:5%;
 }
 
 .testimonial-text::after {
-  top:2rem;
-  left:50rem;
+  top:5%;
+  left:85%;
   transform: rotate(180deg);
 }
 
@@ -845,9 +844,9 @@ z-index: 2;
   position: absolute;
   left: 50%;
   top:0%;
-  margin: 5rem 0 8rem 0;
-  height: 28rem;
+  margin: 3rem 0 8rem 0;
   width: 50%;
+  height: 28rem;
   background-color: var(--color-white);
   border-radius: 1rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -855,8 +854,8 @@ z-index: 2;
 
 .swiper-button-testimonial {
   color: var(--color-primary-medium);
-  height: 5.8rem;
-  width: 5.8rem;
+  height: 5rem;
+  width: 5rem;
   cursor: pointer;
 }
 
@@ -888,7 +887,7 @@ z-index: 2;
 /********************/
 
 .section-faq {
-  height: 115vh;
+  height: 100%;
   padding: 8rem 15rem 10rem 15rem;
   clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
   background-color: var(--color-primary-medium);
@@ -903,7 +902,7 @@ z-index: 2;
 }
 
 .faq {
-  width: 75%;
+  width: 80%;
   background-color: var(--color-primary-light);
   border-radius: 10px;
   margin: 2rem 0;
@@ -1072,8 +1071,6 @@ z-index: 2;
   margin-top: 5rem;
 }
 
-
-
   /*********************/
   /* FOOTER  */
   /********************/
@@ -1089,9 +1086,10 @@ z-index: 2;
   padding-bottom: 1.5rem;
 }
 
-.footer-nav-list {
-  list-style: none;
-  font-size: 2rem;
+.contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 
@@ -1136,15 +1134,10 @@ ion-icon:hover {
 
   @media(max-width: 92em) {
     
-    .testimonial-text::after {
-      top:2rem;
-      left:44rem; 
-    }
-    .testimonial {
-      left: 48%;
-}
   
   }
+
+
 
   @media(max-width: 85em) {
 
@@ -1167,26 +1160,19 @@ ion-icon:hover {
         padding: 10rem 10rem 8rem 10rem;
       }
 
-      .testimonial {
-        left: 46%;
-        width: 50rem;
-      }
       .testimonial-text {
         font-size: 2rem;
       }
 
-      .testimonial-text::after {
-        top:2rem;
-        left:40rem; 
+
+      .contact-form input, .contact-message {
+        width: 36rem;
       }
 
       .contact-map {
         width: 338px;
         height: 263px;
-       
       }
-
-    
   }
 
   
@@ -1214,9 +1200,9 @@ ion-icon:hover {
     }
 
     .section-service-cards {
-    
       height: 100%;
     }
+
     .service-card-container {
       flex-direction: column;
     }
@@ -1247,58 +1233,69 @@ ion-icon:hover {
       transform: rotateY(180deg)
       }
 
-      .services-btn {
+    .services-btn {
         display: block;
         visibility: visible;
         margin: 2rem;
       }
 
-      .testimonial {
-        width: 46rem;
-        height: 40rem;
-        left: 36%;
-      }
-
-      .testimonial-image img{
-        width: 55%;
-        height: 98%;
+      .testimonial-text {
+        font-size: 1.8rem;
       }
 
       .testimonial-text::after {
-        top:10rem;
-        left:34rem; 
+        top:20%;
+        left:80%;
       }
 
       .swiper-button-right-testimonial {
-        left: 72%;
-      }
-      
-      .section-faq {
+        margin-left: 2rem;
+    }
+  
+    .section-faq {
         padding: 8rem 8rem 10rem 8rem;
       }
 
-      .heading-secondary {
+    .heading-secondary {
         margin-bottom: 4rem;
       }
     
-      .contact-container {
+    .contact-container {
         flex-direction: column;
         justify-content: center;
         align-items: center;
       }
 
-      .section-contact {
+    .section-contact {
         height: 100%;
       }
 
-      .contact-map {
+    .contact-form input, .contact-message {
+        width: 41rem;
+      }
+
+    .contact-map {
         margin-bottom: 4rem;
+        width: 390px;
+        height: 290px;
       }
       
     .contact-shop-hours {
-      margin-bottom: 0; 
-      }
+        margin-bottom: 0; 
+       }
   
+    ion-icon {
+      font-size: 36px;
+      }
+
+    .social-icons:not(:last-child) {
+      margin-right: 1rem;
+      }
+
+    .footer-address {
+        margin: 0 3rem;
+        font-size: 1.8rem; 
+      }
       
   }
 
@@ -1313,7 +1310,11 @@ ion-icon:hover {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-    margin-bottom: 10rem;
+      margin-bottom: 10rem;
+    }
+
+    .section-about {
+      padding: 8rem 8rem 6rem 8rem; 
     }
 
     .about-description {
@@ -1340,11 +1341,11 @@ ion-icon:hover {
   
     }
 
-      .showcase-image-one, .showcase-image-two,
-      .showcase-image-three, .showcase-image-four,
-      .showcase-image-five, .showcase-image-six {
-        position: absolute;
-      }
+    .showcase-image-one, .showcase-image-two,
+    .showcase-image-three, .showcase-image-four,
+    .showcase-image-five, .showcase-image-six {
+      position: absolute;
+    }
 
     .showcase-image-one {
       /* celebration */
@@ -1355,7 +1356,7 @@ ion-icon:hover {
 
       }
       
-      .showcase-image-two {
+    .showcase-image-two {
         /* family portrait */
         left: 34%;
         top: 72%;
@@ -1363,7 +1364,7 @@ ion-icon:hover {
         z-index: 1;
         }
       
-      .showcase-image-three {
+    .showcase-image-three {
         /* lady with camera */
         left: 32%;
         top: 62%;
@@ -1371,7 +1372,7 @@ ion-icon:hover {
       z-index: 2;
         }
       
-      .showcase-image-four {
+    .showcase-image-four {
         /* wedding couple */
       left: 56%;
       top: 64%;
@@ -1379,7 +1380,7 @@ ion-icon:hover {
       z-index: 0;
         }
       
-      .showcase-image-five {
+    .showcase-image-five {
         /* father and son */
         left: 15%;
         top: 72%;
@@ -1387,13 +1388,13 @@ ion-icon:hover {
         z-index: 0;
           }
       
-      .showcase-image-six {
-        /* dogtrait */
-        left:72%;
-        top: 74%;
-        width: 14%;
-        z-index: 4;
-            }  
+    .showcase-image-six {
+      /* dogtrait */
+      left:72%;
+      top: 74%;
+      width: 14%;
+      z-index: 4;
+    }  
   
    .service-card-side {
       height: 58rem;
@@ -1404,34 +1405,124 @@ ion-icon:hover {
       width: 70%;
     }
 
+    .section-testimonials {
+      padding: 8rem 10rem 5rem 10rem;
+    }
+   
     .heading-secondary {
       font-size: 4rem;
     }
-
-    .testimonial {
-      width: 100%;
-      left: 0%;
-    }
-
-    .testimonial-text {
-      width: auto;
-      padding: 0 1rem 0 4rem;
-      margin-left: 0;
-      left: 0%;
-    }
     
-    .testimonial-image img {
-      height: 0;
-      width: 0;
-      display: none;
-      visibility: hidden;
-    }
-
-
     .section-faq {
       padding: 6rem 2rem 6rem 2rem;
     }
+
   }
+
+
+  @media(max-width: 50em) {
+
+.hero-text-box {
+  width: 80%;
+}
+
+    .hero-title {  
+      font-size: 2.8rem;
+  }
+  
+  .hero-description {
+      font-size: 2.2rem;
+
+  }
+
+  .about-description {
+    width: 100%;
+  }
+
+  .about-showcase {
+    visibility: hidden;
+    display: none;
+  }
+
+    .service-card {
+
+      width: 100%;
+    }
+
+    .card-title {
+
+      font-size: 2.5rem;
+    }
+
+    .service-card-features {
+      font-size: 1.6rem;
+    }
+
+    .section-testimonials {
+      height: 80vh;
+    }
+
+    .testimonial-image img {
+      visibility: hidden;
+      display: none;
+    }
+
+    .testimonial {
+      left: 0;
+      width: 100%;
+    }
+
+
+    .testimonial-text {
+      font-size: 1.8rem;
+    }
+
+    .testimonial-text::after {
+      top:5%;
+      left:78%;
+    }
+
+    .swiper-button-right-testimonial {
+      left: 48%;
+  }
+  
+  .swiper-button-left-testimonial {
+    left: 38%;
+    
+  }
+
+    .footer {
+    padding-top: 2rem;
+    height: 100%;
+    flex-direction: column;
+    }
+
+    .contact-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .footer-social-icons {
+      margin-bottom: 2rem;
+    }
+
+    .footer-address {
+      margin-bottom: 2rem;
+    }
+
+    .footer-info {
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer-copyright {
+      margin-right: 2rem;
+    }
+
+  }
+  
 
   /*********************/
   /* GALLERY PAGE  */
@@ -1448,7 +1539,6 @@ ion-icon:hover {
   }
   .hero-text-box-gallery {
     top: 70%;
-   
   }
   
   .section-gallery {
